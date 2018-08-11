@@ -503,7 +503,7 @@ class Mapper extends \DB\Cursor {
 	**/
 	function copyto(&$var) {
 		if (is_string($var))
-			$var=&\Base::instance()->ref($key);
+			$var=&\Base::instance()->ref($var);
 		foreach ($this->document as $key=>$field)
 			$var[$key]=$field;
 	}

@@ -351,9 +351,9 @@ class Mapper extends \DB\Cursor {
 	*	@return NULL
 	*	@param $var mixed
 	**/
-	function copyto($var) {
+	function copyto(&$var) {
 		if (is_string($var))
-			$var=&\Base::instance()->ref($key);
+			$var=&\Base::instance()->ref($var);
 		foreach ($this->document as $key=>$field)
 			$var[$key]=$field;
 	}
